@@ -20,6 +20,8 @@ export function spawn(params: WorkerParameters): Promise<WorkerResponse> {
         reject(err);
         return;
       }
+      // eslint-disable-next-line no-console
+      console.log('WOW', data);
       resolve(JSON.parse(JSON.parse(data.Payload as string).body) as WorkerResponse);
     });
   });
